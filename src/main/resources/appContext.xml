@@ -16,9 +16,9 @@
     <context:component-scan base-package="com.department"/>
     <bean name="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
-        <property name="url" value="jdbc:mysql://localhost:3306/hibernate_test?characterEncoding=UTF-8" />
+        <property name="url" value="jdbc:mysql://localhost:3306/hybersql?characterEncoding=UTF-8" />
         <property name="username" value="root" />
-        <property name="password" value="1" />
+        <property name="password" value="root" />
     </bean>
 
     <bean id="sessionFactory"

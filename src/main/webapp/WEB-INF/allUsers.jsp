@@ -32,7 +32,7 @@
 <div class="main container">
 
     <div class="row">
-        <h1>All Users </h1>
+        <h1>Users </h1>
     </div>
 
     <div class="container-fluid">
