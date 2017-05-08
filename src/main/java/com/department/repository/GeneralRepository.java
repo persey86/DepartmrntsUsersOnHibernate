@@ -20,5 +20,4 @@ public interface GeneralRepository <T extends EntityType, E, EX extends Exceptio
 
     //delete entity by ID(has type "E")
     void delete(E id) throws EX;
-
 }

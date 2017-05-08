@@ -18,6 +18,7 @@ public class Department implements EntityType {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Integer id;
 
+
     @CheckWith(value = UniqueDepartmentName.class,message = "This name of department has used")
     @Length(min = 3, message = "Put more than 3 symbols")
     @Size(max = 15, message = "Field must contains less than 15 symbols")

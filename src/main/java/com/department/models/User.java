@@ -13,6 +13,7 @@ import java.util.Date;
 @Entity(name = "user")
 public class User implements EntityType {
 
+
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Integer id;
