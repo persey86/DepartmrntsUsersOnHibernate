@@ -12,7 +12,7 @@
 <body>
 <div class="main container">
     <div class="row">
-        <form method="post" action="<c:url value='/createOrUpdateDepartment' />">
+        <form method="post" action="<c:url value='/createOrUpdateDepartmentAction' />">
 
 
             <input type="hidden" name="departmentId" value="${department.id}">

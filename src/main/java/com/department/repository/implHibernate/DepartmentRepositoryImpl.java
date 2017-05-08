@@ -9,6 +9,8 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import java.util.Date;
 import java.util.List;
@@ -16,9 +18,12 @@ import java.util.List;
 /**
  * Created on 25.04.17.
  */
+//  Realization DAO-template
+@Repository
 public class DepartmentRepositoryImpl implements DepartmentRepository {
 
-private SessionFactory sessionFactory = HibernateUtility.getSessionFactory();
+    @Autowired
+private SessionFactory sessionFactory;  //= HibernateUtility.getSessionFactory();
 
     @Override
     public List<Department> findAll() throws RepositoryException {

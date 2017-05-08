@@ -8,6 +8,9 @@ import com.department.repository.UserRepository;
 import com.department.repository.implHibernate.UserRepositoryImpl;
 import com.department.services.UserService;
 import com.department.validation.CustomValidator;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.HashMap;
 import java.util.List;
@@ -16,17 +19,24 @@ import java.util.Map;
 /**
  * Created on 16.04.2017.
  */
+// Autoscan paths , component by service-layer
+@Service
 public class UserServiceImpl implements UserService {
 
-    private UserRepository userRepository = new UserRepositoryImpl();
-    private CustomValidator customValidator = new CustomValidator();
+    @Autowired
+    private UserRepository userRepository; //= new UserRepositoryImpl();
+
+    @Autowired
+    private CustomValidator customValidator; //= new CustomValidator();
 
     @Override
+    @Transactional(readOnly = true)
     public List<User> findAllEntities() throws AppException {
         return userRepository.findAll();
     }
 
     @Override
+    @Transactional(readOnly = true)
     public User findOneEntity(Integer id) throws AppException {
         return userRepository.findOne(id);
     }

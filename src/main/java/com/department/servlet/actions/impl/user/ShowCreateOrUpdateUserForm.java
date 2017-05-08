@@ -2,25 +2,22 @@ package com.department.servlet.actions.impl.user;
 
 import com.department.repository.DepartmentRepository;
 import com.department.repository.UserRepository;
-import com.department.repository.implHibernate.DepartmentRepositoryImpl;
-import com.department.repository.implHibernate.UserRepositoryImpl;
 import com.department.servlet.actions.Action;
-
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
  * Created on 19.04.2017.
  */
+@Component(value = "/createOrUpdateUser")
 public class ShowCreateOrUpdateUserForm implements Action {
 
+    @Autowired
     private DepartmentRepository departmentRepositoryImpl;
+    @Autowired
     private UserRepository userRepositoryImpl;
-
-    public ShowCreateOrUpdateUserForm() {
-        this.departmentRepositoryImpl = new DepartmentRepositoryImpl();
-        this.userRepositoryImpl = new UserRepositoryImpl();
-    }
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws Exception {

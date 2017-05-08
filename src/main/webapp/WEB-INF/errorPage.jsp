@@ -6,7 +6,18 @@
 </head>
 <body>
 
- Error: ${error}
 
+ <div class="container">
+     <div class="jumbotron alert-danger">
+         <h1>Oops. Something went wrong</h1>
+
+         <%--Error: ${error}--%>
+     </div>
+
+     <div>
+         <a class="button info shadow-hover" href="<c:url value="/"/>">Home page</a>
+     </div>
+
+ </div>
 </body>
 </html>

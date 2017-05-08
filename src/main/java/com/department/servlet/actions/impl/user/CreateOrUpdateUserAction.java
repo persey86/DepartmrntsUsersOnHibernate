@@ -5,9 +5,9 @@ import com.department.exceptions.AppValidationException;
 import com.department.models.User;
 import com.department.services.DepartmentService;
 import com.department.services.UserService;
-import com.department.services.impl.DepartmentServiceImpl;
-import com.department.services.impl.UserServiceImpl;
 import com.department.servlet.actions.Action;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 
 import javax.servlet.ServletException;
@@ -22,14 +22,15 @@ import java.util.Map;
 /**
  * Created on 19.04.2017.
  */
+//Autodetect classes with autoscan path like class-controller and Return this name from bean if this name is exist
+// equals HttpServlet
+@Component(value = "/createOrUpdateUserAction")
 public class CreateOrUpdateUserAction  implements Action {
-    private UserService userService;
-    private DepartmentService departmentService;
 
-    public CreateOrUpdateUserAction(){
-        this.userService = new UserServiceImpl();
-        this.departmentService = new DepartmentServiceImpl();
-    }
+@Autowired
+    private UserService userService;
+@Autowired
+    private DepartmentService departmentService;
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws AppException, ServletException, IOException, ParseException {

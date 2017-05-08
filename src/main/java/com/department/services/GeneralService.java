@@ -18,5 +18,4 @@ public interface GeneralService<T extends EntityType, E, EX extends Exception>{
 
     //delete entity by ID(has type "E")
     void deleteEntityWithValidation(E id) throws EX;
-
 }

@@ -4,8 +4,10 @@ import com.department.exceptions.AppException;
 import com.department.exceptions.AppValidationException;
 import com.department.models.Department;
 import com.department.services.DepartmentService;
-import com.department.services.impl.DepartmentServiceImpl;
 import com.department.servlet.actions.Action;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -17,13 +19,12 @@ import java.util.Map;
 /**
  * Created on 19.04.2017.
  */
+//Autodetect classes with autoscan path like class-controller and Return this name from bean if this name is exist
+@Component(value = "/createOrUpdateDepartmentAction")
 public class CreateOrUpdateDepartmentAction implements Action {
 
-    private DepartmentService departmentService;
-
-    public CreateOrUpdateDepartmentAction() {
-        this.departmentService = new DepartmentServiceImpl();
-    }
+    @Autowired
+    private DepartmentService departmentService; // = new DepartmentServiceImpl();
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws AppException, IOException, ServletException {

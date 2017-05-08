@@ -17,7 +17,7 @@ public class HibernateUtility {
             return sessionFactory;
         } catch (Throwable e) {
             System.err.println("SessionFactory initialization filed" + e);
-            LOGGER.error("Error while getting unique user e-mail", e);
+//            LOGGER.error("Error while getting unique user e-mail", e);
             throw new ExceptionInInitializerError(e);
 
         }

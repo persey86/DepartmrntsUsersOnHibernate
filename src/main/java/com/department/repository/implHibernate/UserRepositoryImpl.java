@@ -7,15 +7,20 @@ import com.department.utils.HibernateUtility;
 import org.hibernate.*;
 
 import org.hibernate.query.Query;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 /**
  * Created on 25.04.17.
  */
+//  Realization DAO-template
+@Repository
 public class UserRepositoryImpl implements UserRepository {
 
-    private SessionFactory sessionFactory = HibernateUtility.getSessionFactory();
+    @Autowired
+    private SessionFactory sessionFactory;  //= HibernateUtility.getSessionFactory();
 
 
     @Override

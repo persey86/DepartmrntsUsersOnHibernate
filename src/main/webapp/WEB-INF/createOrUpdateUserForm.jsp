@@ -17,7 +17,7 @@
     </div>
 
     <div class="row">
-        <form method="post" action="<c:url value='/createOrUpdateUser' />">
+        <form method="post" action="<c:url value='/createOrUpdateUserAction' />">
 
             <input type="hidden"  name="userId" value="${user.id}"/>
 
